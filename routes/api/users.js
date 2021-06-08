@@ -5,7 +5,7 @@ const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const normalize = require("normalize-url");
-const config = require("../../config/default.json");
+const config = require("config");
 const User = require("../../models/User");
 
 /**
@@ -91,7 +91,15 @@ router.post(
         },
       };
 
-      jwt.sign(payload, config.get("jwtSignInSecret"));
+      jwt.sign(
+        payload,
+        config.get("jwtSignInSecret"),
+        { expiresIn: "1d" },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (err) {
       console.error(err.message);
       return res.status(500).send("Server error");
