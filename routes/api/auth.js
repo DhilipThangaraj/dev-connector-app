@@ -11,7 +11,7 @@ const User = require("../../models/User");
 /**
  * @route  GET    api/auth
  * @desc   Test   route
- * @access Public
+ * @access  private - if you give token [signin/signup]. you will get the access of user information.
  * @Note {Function} .select("-password") - which eliminate the password in the document and give the rest of it.
  */
 
@@ -27,8 +27,8 @@ router.get("/", auth, async (req, res) => {
 
 /**
  * @route  POST    api/users
- * @desc   register user
- * @access Public
+ * @desc  sign in user
+ * @access public
  */
 
 router.post(
