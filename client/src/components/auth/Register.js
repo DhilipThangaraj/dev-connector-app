@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import axios from "axios";
 
 export const Register = () => {
   const [formData, setFormData] = useState({
@@ -13,12 +14,18 @@ export const Register = () => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (password1 !== password2) {
       console.log("Password do not match");
     } else {
-      console.log(formData);
+      const newUser = {
+        name,
+        email,
+        password: password1,
+      };
+
+      console.log("success area");
     }
   };
 
@@ -56,7 +63,7 @@ export const Register = () => {
         <div className="form-group">
           <input
             type="password"
-            placeholder="Password1"
+            placeholder="Password"
             name="password1"
             minLength="6"
             value={password1}
