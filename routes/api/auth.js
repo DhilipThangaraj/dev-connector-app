@@ -49,7 +49,7 @@ router.post(
     const { email, password } = req.body;
 
     try {
-      //see if user exsist with the same email
+      //see if user exist with the same email
 
       let user = await User.findOne({ email });
 
