@@ -48,7 +48,7 @@ const CreateProfile = (props) => {
       <small>* = required field</small>
       <form className="form">
         <div className="form-group">
-          <select name="status" value={status} onChange={() => onChange(e)}>
+          <select name="status" value={status} onChange={(e) => onChange(e)}>
             <option value="0">* Select Professional Status</option>
             <option value="Developer">Developer</option>
             <option value="Junior Developer">Junior Developer</option>
