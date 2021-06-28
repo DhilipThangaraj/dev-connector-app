@@ -8,5 +8,6 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOG_OUT = "LOG_OUT";
 export const GET_PROFILE = "GET_PROFIE";
+export const UPDATE_PROFILE = "UPDATE_PROFILE";
 export const CLEAR_PROFILE = "CLEAR_PROFIE";
 export const PROFILE_ERROR = "PROFILE_ERROR";
