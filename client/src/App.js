@@ -10,6 +10,7 @@ import Dashboard from "../src/components/dashboard/Dashboard";
 import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
 import AddExperience from "./components/profile-forms/AddExperience";
+import AddEducation from "./components/profile-forms/AddEducation";
 import PrivateRoute from "./routing/PrivateRoute";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -53,6 +54,11 @@ function App() {
                 exact
                 path="/add-experience"
                 component={AddExperience}
+              />
+              <PrivateRoute
+                exact
+                path="/add-education"
+                component={AddEducation}
               />
             </Switch>
           </section>
