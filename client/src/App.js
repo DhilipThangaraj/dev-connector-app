@@ -15,6 +15,7 @@ import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
 import Posts from "./components/posts/Posts";
 import PrivateRoute from "./routing/PrivateRoute";
+import Post from "./components/post/Post";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -66,6 +67,7 @@ function App() {
                 component={AddEducation}
               />
               <PrivateRoute exact path="/posts" component={Posts} />
+              <PrivateRoute exact path="/post/:id" component={Post} />
             </Switch>
           </section>
         </Fragment>
